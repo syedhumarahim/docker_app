@@ -1,16 +1,29 @@
-install:
-	pip install --upgrade pip && pip install -r requirements.txt
+# Define the image name
+IMAGE_NAME = paintings_name
+DOCKER_ID_USER = syedhumarahim
 
+# Build the Docker image
+build:
+	docker build -t $(IMAGE_NAME) .
+
+# Run the Docker container
 run:
-	python3 main.py
+	docker run -p 5000:5000 $(IMAGE_NAME)
 
-lint:
-	pylint --disable=R,C main.py
+# Remove the Docker image
+clean:
+	docker rmi $(IMAGE_NAME)
 
-test:
-	python3 test_main.py 
+image_show:
+	docker images
 
-cp C:/Users/ss1516/Downloads/Bob_PythonTemplate1-main/Bob_PythonTemplate1-main/.devcontainer .
+container_show:
+	docker ps
 
-all: install run test lint
+push:
+	docker login
+	docker tag $(IMAGE_NAME) $(DOCKER_ID_USER)/$(IMAGE_NAME)
+	docker push $(DOCKER_ID_USER)/$(IMAGE_NAME):latest
 
+login:
+	docker login -u ${DOCKER_ID_USER}
