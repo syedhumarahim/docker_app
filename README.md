@@ -1,4 +1,4 @@
-[![Python 3.11.9](https://github.com/syedhumarahim/scaffold/actions/workflows/main.yml/badge.svg)](https://github.com/syedhumarahim/scaffold/actions/workflows/main.yml)
+[![Build and Push Docker Image](https://github.com/syedhumarahim/docker_app/actions/workflows/main.yml/badge.svg)](https://github.com/syedhumarahim/docker_app/actions/workflows/main.yml)
 
 # Famous Paintings Web App
 
